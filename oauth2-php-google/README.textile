@@ -1,0 +1,13 @@
+h2. Google OAuth 2 Sample Code
+
+The sample code contained in this project is intended to be used to capture privileged Google contact data via OAuth 2.  This project contains several files that are required for integration:
+* common.php - Common variables and functions
+* index.php - Initiates the OAuth 2 request to Google
+* complete.php - Exchanges code for access token then makes request to get contact information and refresh access token
+
+To use this sample:
+* Go to the Google application console at https://code.google.com/apis/console/ and click on "Identity" from the menu on the left
+* Under the "OAuth 2 Credentials" section click the button to generate new OAuth 2 keys.  Make sure that you enter in the same callback URL in this area as the one that you will be using in your OAuth 2 application when returning a user from the authorization on Google.
+* Copy all files to a directory of your choosing (in the same place as what was specified when creating your new Google application)
+* Edit common.php and add in your key, secret and absolute path to your complete.php file
+* Load index.php to begin the sample test
