@@ -10,5 +10,3 @@ $auth_url = sprintf("%s?scope=%s&response_type=code&redirect_uri=%s&client_id=%s
 //forward user to PayPal auth page
 header("Location: $auth_url");
 ?>
-
-<!--<img src="https://www.paypalobjects.com/en_US/Marketing/i/btn/login-with-paypal-button.png" />-->
