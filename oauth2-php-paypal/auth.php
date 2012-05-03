@@ -25,13 +25,17 @@ if (isset($_GET['code'])){
     
     var_dump($profile);
 } else {
-    $auth_url = sprintf("%s?scope=%s&response_type=code&redirect_uri=%s&client_id=%s",
-                        AUTHORIZATION_ENDPOINT,
-                        urlencode("https://identity.x.com/xidentity/resources/profile/me"),
-                        urlencode(CALLBACK_URL),
-                        KEY);
-    
-    //forward user to PayPal auth page
-    header("Location: $auth_url");
+    if (isset($_GET['error_uri'])){
+        echo "error";
+    } else {
+        $auth_url = sprintf("%s?scope=%s&response_type=code&redirect_uri=%s&client_id=%s",
+                            AUTHORIZATION_ENDPOINT,
+                            urlencode(PROFILE_ENDPOINT),
+                            urlencode(CALLBACK_URL),
+                            KEY);
+        
+        //forward user to PayPal auth page
+        header("Location: $auth_url");
+    }
 }
 ?>
